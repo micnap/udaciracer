@@ -21,7 +21,7 @@ body {
 }
 
 header {
-  background-image: url('https://via.placeholder.com/1150');
+  background-image: url('../images/woman-racer.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -33,7 +33,9 @@ header {
 
 h1 {
   color: white;
-  text-shadow: 3px 2px hsl(0, 2%, 51%);
+  background-color:rgba(0, 0, 0, .7);
+  padding: 20px;
+  text-shadow: 3px 2px hsl(0, 0%, 20%);
   font-size: 70px;
   text-transform: uppercase;
 }
