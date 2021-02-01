@@ -1,7 +1,7 @@
 // PROVIDED CODE BELOW (LINES 1 - 80) DO NOT REMOVE
 
 // The store will hold all information needed globally
-var store = {
+let store = {
 	track_id: undefined,
 	player_id: undefined,
 	race_id: undefined,
@@ -107,15 +107,19 @@ async function handleCreateRace() {
 	// render starting UI
 	renderAt('#race', renderRaceStartView(race.Track, race.Cars))
 
-	// The race has been created, now start the countdown
-	// call the async function runCountdown
-	await runCountdown()
+	try {
+		// The race has been created, now start the countdown
+		// call the async function runCountdown
+		await runCountdown()
 
-	// call the async function startRace
-	await startRace(store.race_id)
+		// call the async function startRace
+		await startRace(store.race_id)
 
-	// call the async function runRace
-	await runRace(store.race_id)
+		// call the async function runRace
+		await runRace(store.race_id)
+	} catch(error) {
+		console.log("There was a problem with the race!:: ", error);
+	}
 }
 
 function runRace(raceID) {
